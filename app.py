@@ -15,7 +15,7 @@ def predict():
     prev = model.predict(pd.DataFrame(atest_encoded, index=[idClient]))
     proba = model.predict_proba(pd.DataFrame(atest_encoded, index=[idClient]))[0][prev[0]].round(4)
     
-    if proba > 0.6451:   # Seuil optimal
+    if proba > 0.55:   # Seuil optimal
         lib = "Défaut"
     else:
         lib = "Sans Défaut"
